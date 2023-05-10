@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+:root {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  height: 100vh;
+}
+
+#header {
+  position: relative;
+  height: 30%;
+
+  background: url("../images/bg-main-desktop.png") no-repeat center;
+}
+
+/* card back design */
+
+.card-back {
+  width: 80%;
+  position: absolute;
+  top: 2rem;
+  right: 1rem;
+  background: url("../images/bg-card-back.png") no-repeat center/cover;
+  width: 300px;
+  height: 180px;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.card-back img {
+  width: 100%;
+}
+
+.card-back__cvc {
+  margin-right: 1.6rem;
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+/* card front design */
+
+.card-front {
+  width: 80%;
+  position: absolute;
+  top: 8rem;
+  left: 1rem;
+  background: url("../images/bg-card-front.png") no-repeat center/cover;
+  width: 300px;
+  height: 180px;
+  border-radius: 10px;
+  z-index: 1;
+  color: #fff;  
+  padding: 1rem;
+}
+
+.card-front__content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.card-front__number{
+  display: flex;
+  column-gap: 0.5rem;
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.card-front__footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.6rem;
+}
+
+/* page content */
+
+.content {
+  margin-top: 3rem;
+  padding: 2rem;
+  font-size: 0.8rem;
+}
+
+.content label {
+  text-transform: uppercase;
+  margin: 0.3rem;
+  margin-left: 0;
+}
+.content input {
+  all:unset;
+  margin-bottom: 0.5rem;
+  margin-left: 0;
+  font-size: 1rem;
+  padding: 0.6rem;
+  border-radius: 10px;
+  border: 1px solid hsl(270, 3%, 87%);
+  font-family: inherit;
+}
+
+.content input::placeholder {
+  color: hsl(270, 3%, 87%);
+}
+
+.content input[type="submit"] {
+  background-color: hsl(278, 68%, 11%);
+  color: hsl(279, 6%, 55%);
+  border: none;
+}
+
+.card-form-cardholder, .card-form-card-number, 
+.card-form-footer_expdate, .card-form-footer_cvc {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-form-footer {
+  display: flex;
+}
+
+.card-form-footer-expdate_mmyy {
+  display: flex;
+  width: 100%;
+}
+
+.card-form-footer-expdate_mmyy input {
+  /* width: 50%; */
+  flex-shrink: 5;
+}

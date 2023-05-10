@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="css/style.css">
+  <!-- <link rel="stylesheet" href="css/style.css"> -->
+  <link rel="stylesheet" href="css/styles.css">
   
   <title>Frontend Mentor | Interactive card details form</title>
 
@@ -16,26 +17,28 @@
   </style>
 </head>
 <body>
-  <header>
+  <header id="header">
 <!--    <picture id="background">-->
 <!--      <source srcset="images/bg-main-desktop.png" media="(min-width: 768px)">-->
 <!--      <img src="images/bg-main-mobile.png" alt="background">-->
 <!--    </picture>-->
     <div class="card-front">
-      <svg class="card-front-logo" width="84" height="47" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="23.478" cy="23.5" rx="23.478" ry="23.5" fill="#fff"/><path d="M83.5 23.5c0 5.565-4.507 10.075-10.065 10.075-5.559 0-10.065-4.51-10.065-10.075 0-5.565 4.506-10.075 10.065-10.075 5.558 0 10.065 4.51 10.065 10.075Z" stroke="#fff"/></svg>
-
-      <div class="card-front_number">
-        <span>0000</span><span>0000</span><span>0000</span><span>0000</span>
-      </div>
-      <div class="card-front_footer">
-        <div class="card-front_owner">JANE APPLESEED</div>
-        <div class="card-front_expiry-date">00/00</div>
+      <div class="card-front__content">
+        <svg class="card-front-logo" width="84" height="47" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="23.478" cy="23.5" rx="23.478" ry="23.5" fill="#fff"/><path d="M83.5 23.5c0 5.565-4.507 10.075-10.065 10.075-5.559 0-10.065-4.51-10.065-10.075 0-5.565 4.506-10.075 10.065-10.075 5.558 0 10.065 4.51 10.065 10.075Z" stroke="#fff"/></svg>
+  
+        <div class="card-front__number">
+          <span>0000</span><span>0000</span><span>0000</span><span>0000</span>
+        </div>
+        <div class="card-front__footer">
+          <div class="card-front_owner">JANE APPLESEED</div>
+          <div class="card-front_expiry-date">00/00</div>
+        </div>
       </div>
     </div>
     <div class="card-back">
-      <div class="card-back_cvc">
-        <div class="card-back_cvc-number">000</div>
-      </div>
+        <div class="card-back__cvc">
+          000
+        </div>
     </div>
   </header>
   <main class="content">
@@ -74,7 +77,7 @@
   
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">kevinHouguet</a>.
   </footer>
 </body>
 </html>
