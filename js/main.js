@@ -29,15 +29,28 @@ const app = {
     app.changeCard();
   },
   changeCard: () => {
+    // change the back of card
     const cardBack = document.querySelector('.card-back')
-    const cardFront = document.querySelector('.card-front')
     cardBack.querySelector('.card-back__cvc').textContent = app.state.cvc
+
+    // change the front of card
+    const cardFront = document.querySelector('.card-front')
+
+    // change the card number
     const spanForNumber = cardFront.querySelector('.card-front__number').querySelectorAll('span')
     const cardNumbersArray = app.splitCardNumber(app.state.cardNumber)
     console.log(cardNumbersArray)
     spanForNumber.forEach((span, i) => {
       span.textContent = cardNumbersArray[i]
     })
+
+    // change the name
+    const cardName = cardFront.querySelector('.card-front_owner')
+    cardName.textContent = app.state.name.toUpperCase()
+
+    // change the exp date
+    const cardExpDate = cardFront.querySelector('.card-front_expiry-date')
+    cardExpDate.textContent = `${app.state.expDateMM}/${app.state.expDateYY}`
   },
   splitCardNumber: (cardNumber) => {
     // We needing an array of string
