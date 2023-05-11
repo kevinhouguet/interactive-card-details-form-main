@@ -44,20 +44,20 @@
   <main class="content">
     <form action="#" class="card-form">
       <div class="card-form-cardholder">
-        <label for="cardholder-name" class="label">CardHolder Name</label>
-        <input type="text" name="cardholder-name" id="cardholder-name" placeholder="e.g. Jane Appleseed">
+        <label for="name" class="label">CardHolder Name</label>
+        <input type="text" name="name" id="cardholder-name" placeholder="e.g. Jane Appleseed">
       </div>
       <div class="card-form-card-number">
-        <label for="card-number" class="label">Card Number</label>
-        <input type="number" name="card-number" id="card-number" placeholder="e.g. 1234 5678 9123 0000">
+        <label for="cardNumber" class="label">Card Number</label>
+        <input type="number" name="cardNumber" id="card-number" placeholder="e.g. 1234 5678 9123 0000">
       </div>
 
       <div class="card-form-footer">
         <div class="card-form-footer_expdate">
           <label for="expdateMM">Exp. date (mm/yy)</label>
           <div class="card-form-footer-expdate_mmyy">
-            <input type="text" name="expdateMM" id="expdateMM" placeholder="MM">
-            <input type="text" name="expdateYY" id="expdateYY" placeholder="YY">
+            <input type="text" name="expDateMM" id="expdateMM" placeholder="MM">
+            <input type="text" name="expDateYY" id="expdateYY" placeholder="YY">
           </div>
         </div>
         <div class="card-form-footer_cvc">
@@ -65,7 +65,7 @@
           <input type="number" name="cvc" id="cvc" placeholder="e.g. 123">
         </div>
       </div>
-      <input type="submit" value="Confirm">
+      <input id="submit__form" type="submit" value="Confirm">
     </form>
   </main>
 
@@ -79,5 +79,6 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">kevinHouguet</a>.
   </footer>
+  <script src="./js/main.js"></script>
 </body>
 </html>

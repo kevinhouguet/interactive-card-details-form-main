@@ -26,6 +26,8 @@ body{
     display: flex;
     height: 100vh;
 }
+
+
 header {
     height: 100vh;
     width: 483px;

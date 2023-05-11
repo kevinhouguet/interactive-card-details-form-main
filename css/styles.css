@@ -15,6 +15,12 @@ body{
   height: 100vh;
 }
 
+footer.attribution {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
 #header {
   position: relative;
   height: 30%;
@@ -117,6 +123,11 @@ body{
   background-color: hsl(278, 68%, 11%);
   color: hsl(279, 6%, 55%);
   border: none;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  margin-top: 1rem;
+  color: hsl(270, 3%, 87%);
 }
 
 .card-form-cardholder, .card-form-card-number, 
@@ -127,14 +138,24 @@ body{
 
 .card-form-footer {
   display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
 }
 
 .card-form-footer-expdate_mmyy {
   display: flex;
-  width: 100%;
+  column-gap: 0.5rem;
 }
 
-.card-form-footer-expdate_mmyy input {
-  /* width: 50%; */
-  flex-shrink: 5;
+.card-form-footer-expdate_mmyy input, .card-form-footer_cvc input {
+  width: 100%;
+  box-sizing: border-box;
 }
+
+.card-form-footer_cvc, .card-form-footer_expdate {
+  width: 50%;
+}
+
+/* Desktop layout */
+
+
