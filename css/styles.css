@@ -4,6 +4,9 @@
   font-family: 'Space Grotesk', sans-serif;
   font-size: 18px;
   font-weight: 500;
+  --col-light-gray: hsl(270, 3%, 87%);
+  --col-dark-gray: hsl(279, 6%, 55%);
+  --col-verydark-gray: hsl(278, 68%, 11%);
 }
 
 * {
@@ -120,14 +123,13 @@ footer.attribution {
 }
 
 .content input[type="submit"] {
-  background-color: hsl(278, 68%, 11%);
-  color: hsl(279, 6%, 55%);
+  background-color: var(--col-verydark-gray);
+  color: var(--col-light-gray);
   border: none;
   width: 100%;
   box-sizing: border-box;
   text-align: center;
   margin-top: 1rem;
-  color: hsl(270, 3%, 87%);
 }
 
 .card-form-cardholder, .card-form-card-number, 
@@ -156,6 +158,39 @@ footer.attribution {
   width: 50%;
 }
 
+/* Complete layout */
+
+.complete__layout {
+  text-align: center;
+}
+.complete__layout__content {
+  margin: 2rem 0;
+}
+.complete__layout__content__title {
+  font-size: 2rem;
+}
+.complete__layout__content__desc {
+  font-size: 1rem;
+  color: var(--col-dark-gray);
+}
+
 /* Desktop layout */
+
+/* Special */
+
+.hidden {
+  display: none;
+}
+
+a[role="button"] {
+  display: block;
+  background-color: var(--col-verydark-gray);
+  padding: 0.6rem;
+  color: var(--col-light-gray);
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 10px;
+  margin-top: 3rem;
+}
 
 

@@ -26,6 +26,7 @@ const app = {
       app.state[key] = formdata.get(key) === ""
                                       ? app.state[key] : formdata.get(key)
     }
+    app.showConfirmLayout();
     app.changeCard();
   },
   changeCard: () => {
@@ -62,7 +63,15 @@ const app = {
       result.push(cardNumber.substring(0+(rangeNb*i),4+(rangeNb*i)))
     }
     return result
-  }
+  },
+  showConfirmLayout: () => {
+    // hide form
+    const cardForm = document.querySelector('.card-form')
+    cardForm.classList.add('hidden');
+    // show confirm layout
+    const completeLayout = document.querySelector('.complete__layout')
+    completeLayout.classList.remove('hidden')
+  },
 }
 
 document.addEventListener('DOMContentLoaded', app.init);
