@@ -47,24 +47,39 @@
     <form action="#" class="card-form">
       <div class="card-form-cardholder">
         <label for="name" class="label">CardHolder Name</label>
-        <input type="text" name="name" id="cardholder-name" placeholder="e.g. Jane Appleseed">
+        <input type="text"
+            required
+            maxlength="20"
+            name="name" id="cardHolderNameInput" placeholder="e.g. Jane Appleseed">
       </div>
       <div class="card-form-card-number">
         <label for="cardNumber" class="label">Card Number</label>
-        <input type="number" name="cardNumber" id="card-number" placeholder="e.g. 1234 5678 9123 0000">
+        <input type="number"
+            required              
+            name="cardNumber" id="cardNumberInput" placeholder="e.g. 1234 5678 9123 0000">
       </div>
 
       <div class="card-form-footer">
         <div class="card-form-footer_expdate">
           <label for="expdateMM">Exp. date (mm/yy)</label>
           <div class="card-form-footer-expdate_mmyy">
-            <input type="number" name="expDateMM" id="expdate-MM" placeholder="MM">
-            <input type="number" name="expDateYY" id="expdate-YY" placeholder="YY">
+            <input type="number"
+              required
+              step="1"
+              min="1"
+              max="12"
+              name="expDateMM" id="expDateMMInput" placeholder="MM">
+            <input type="number" 
+              required
+              step="1"
+              min="23"
+              max="99"
+              name="expDateYY" id="expDateYYInput" placeholder="YY">
           </div>
         </div>
         <div class="card-form-footer_cvc">
           <label for="cvc">CVC</label>
-          <input type="number" name="cvc" id="cvc" placeholder="e.g. 123">
+          <input type="number" required name="cvc" id="cvcInput" placeholder="e.g. 123">
         </div>
       </div>
       <input id="submit__form" type="submit" value="Confirm">

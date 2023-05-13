@@ -28,25 +28,25 @@ const app = {
     }
   },
 
-  createListeners: () => {
-    const form = document.querySelector('.card-form');
-    // Create a listener for each input with the same name as the key of the state to itierate on it
-    const input = {
-      cardHolderName: form.querySelector('#cardholder-name'),
-      cardNumber: form.querySelector('#card-number'),
-      expDateMM: form.querySelector('#expdate-MM'),
-      expDateYY: form.querySelector('#expdate-YY'),
-      cvc: form.querySelector('#cvc'),
-    }
-
+  createListeners: () => {    
     // itierate on the state to create a listener for each key
     Object.keys(app.state).forEach((key) => {
-      app.addCustomListener(input[key], key, 'input')
+      app.addCustomListener(
+        document.getElementById(`${key}Input`), 
+        key, 
+        'input')
     })
-
+      
+    const form = document.querySelector('.card-form');
     form.addEventListener('submit', app.handleSubmitForm);
   },
-
+  
+  /**
+   * Add a listener to an html element
+   * @param {HTMLElement} htmlElement - the element to listen to
+   * @param {string} elementToModify - the key of the state to modify
+   * @param {string} eventType - the event type to listen to
+   */
   addCustomListener: (htmlElement, elementToModify, eventType) => {
     htmlElement.addEventListener(eventType, (event) => {
       console.log('INPUT CHANGE')
