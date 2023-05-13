@@ -12,6 +12,11 @@ const app = {
     app.createListeners();
   },
 
+  /**
+   * Render the part of the view that needs to be updated
+   * @param {string} elementToModify - the key of the state to modify
+   * @param {*} newValue - the new value to set to the view 
+   */
   render: (elementToModify, newValue) => {
     const htmlElementToModify = document.querySelector(`#${elementToModify}`)
     console.log('RENDER', elementToModify, newValue)
@@ -28,6 +33,9 @@ const app = {
     }
   },
 
+  /**
+   * Create listeners for each input
+   */
   createListeners: () => {    
     // itierate on the state to create a listener for each key
     Object.keys(app.state).forEach((key) => {
@@ -40,7 +48,7 @@ const app = {
     const form = document.querySelector('.card-form');
     form.addEventListener('submit', app.handleSubmitForm);
   },
-  
+
   /**
    * Add a listener to an html element
    * @param {HTMLElement} htmlElement - the element to listen to
@@ -55,6 +63,10 @@ const app = {
     })
   },
 
+  /**
+   * Handle the submit of the form
+   * @param {Event} event - the event triggered by the form
+   */
   handleSubmitForm: (event) => {
     event.preventDefault();
     const formdata = new FormData(event.currentTarget)
@@ -64,7 +76,9 @@ const app = {
     }
     app.showConfirmLayout();
   },
-  
+  /**
+   * Show the confirm layout
+   */
   showConfirmLayout: () => {
     // hide form
     const cardForm = document.querySelector('.card-form')
