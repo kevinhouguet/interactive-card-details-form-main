@@ -19,7 +19,6 @@ const app = {
    */
   render: (elementToModify, newValue) => {
     const htmlElementToModify = document.querySelector(`#${elementToModify}`)
-    console.log('RENDER', elementToModify, newValue)
 
     if(elementToModify === 'cardNumber') {
       // 12345678 needs to be 1234 5678
