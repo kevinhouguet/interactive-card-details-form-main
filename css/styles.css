@@ -29,7 +29,7 @@ footer.attribution {
   position: relative;
   height: 30%;
 
-  background: url("../images/bg-main-desktop.png") no-repeat center/cover;
+  background: url("../images/bg-main-mobile.png") no-repeat center/cover;
 }
 
 /* card back design */
@@ -184,6 +184,7 @@ footer.attribution {
   #header {
     width: 400px;
     height: 100vh;
+    background: url("../images/bg-main-desktop.png") no-repeat center/cover;
   }
   .card-back {
     top: 55%;
