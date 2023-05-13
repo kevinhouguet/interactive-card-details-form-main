@@ -1,7 +1,7 @@
 const app = {
 
   state: {
-    name: 'Jane Appleseed',
+    cardHolderName: 'Jane Appleseed',
     cardNumber: '0000000000000000',
     expDateMM: "00",
     expDateYY: "00",
@@ -9,17 +9,49 @@ const app = {
   },
 
   init: () => {
-    app.getInformation();
+    app.createListeners();
   },
 
-  getInformation: () => {
+  render: (elementToModify, newValue) => {
+    const htmlElementToModify = document.querySelector(`#${elementToModify}`)
+
+    // console.log(childElementToModify);
+    // console.log(newValue)
+
+    if(elementToModify === 'cardNumber') {
+      // 12345678 needs to be 1234 5678
+      // replace all pattern of 4 numbers by the same pattern with a space
+      newValue = newValue.replace(/(.{4})/g, '$1 ');
+      if(newValue.replaceAll(' ', '').length <= 16){
+        htmlElementToModify.textContent = newValue.toUpperCase()
+      }
+    } else {
+      htmlElementToModify.textContent = newValue.toUpperCase()
+    }
+  },
+
+  createListeners: () => {
     const form = document.querySelector('.card-form');
+    const cardHolderName = form.querySelector('#cardholder-name')
+    const cardNumber = form.querySelector('#card-number')
+    const expdateMM = form.querySelector('#expdate-MM')
+    const expdateYY = form.querySelector('#expdate-YY')
+    const cvc = form.querySelector('#cvc')
+    app.addCustomListener(cardHolderName,'cardHolderName','input')
+    app.addCustomListener(cardNumber,'cardNumber','input')
     form.addEventListener('submit', app.handleSubmitForm);
+  },
+
+  addCustomListener: (htmlElement, elementToModify, eventType) => {
+    htmlElement.addEventListener(eventType, (event) => {
+      console.log('INPUT CHANGE')
+      app.state[elementToModify] = event.currentTarget.value
+      app.render(elementToModify, event.currentTarget.value)
+    })
   },
 
   handleSubmitForm: (event) => {
     event.preventDefault();
-    console.log(event.currentTarget)
     const formdata = new FormData(event.currentTarget)
     app.truc = 'truc'
     for (const key of formdata.keys()) {
@@ -40,7 +72,6 @@ const app = {
     // change the card number
     const spanForNumber = cardFront.querySelector('.card-front__number').querySelectorAll('span')
     const cardNumbersArray = app.splitCardNumber(app.state.cardNumber)
-    console.log(cardNumbersArray)
     spanForNumber.forEach((span, i) => {
       span.textContent = cardNumbersArray[i]
     })
